@@ -2,17 +2,23 @@ const Blockchain = require("./blockchain")
 
 const blockchain = new Blockchain()
 
+console.log(blockchain)
+
 blockchain.addBlock({ data: "initial" })
+
+console.log(blockchain)
 
 let prevTimestamp, nextTimestamp, nextBlock, timeDiff, average;
 
 const times = []
 
-for (let i=0; i < 1000; i++) {
+for (let i=0; i < 10000; i++) {
   prevTimestamp = blockchain.chain[blockchain.chain.length-1].timestamp;
 
   blockchain.addBlock({ data: `block ${i}` })
   nextBlock = blockchain.chain[blockchain.chain.length-1];
+
+  console.log(nextBlock)
 
   nextTimestamp = nextBlock.timestamp;
   timeDiff = nextTimestamp - prevTimestamp
