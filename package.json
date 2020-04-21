@@ -6,9 +6,11 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "jest": "^25.3.0",
     "nodemon": "^2.0.3"
   },
